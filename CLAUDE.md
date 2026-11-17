@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Study Buddy Finder helps UCL students find someone to study with. See `SPEC.md` for the pages (Home, Browse buddies, My profile) and features (browse student cards, filter by course, edit my profile).
 
-This is a fresh Next.js app created with `create-next-app` (default options): App Router, TypeScript, Tailwind CSS and ESLint. There is no backend, database or login yet.
+Next.js app created with `create-next-app` (default options): App Router, TypeScript, Tailwind CSS and ESLint. Frontend only: there is no backend, database or login yet, and nothing is saved.
 
 ## Commands
 
@@ -19,14 +19,18 @@ This is a fresh Next.js app created with `create-next-app` (default options): Ap
 
 ## Folder structure
 
-- `app/page.tsx`: the home page (`/`)
-- `app/layout.tsx`: the root layout that wraps every page (fonts, `<html>` and `<body>`)
-- `app/globals.css`: global styles and the Tailwind import
-- `public/`: static files such as images and icons
+- `app/page.tsx`: the Home page (`/`)
+- `app/browse/page.tsx`: the Browse buddies page (`/browse`)
+- `app/profile/page.tsx`: the My profile page (`/profile`)
+- `app/layout.tsx`: wraps every page: loads the fonts and shows the nav bar
+- `app/globals.css`: brand colours, fonts and the `sticker-card` / `sticker-button` styles
+- `app/icon.svg`: the blob favicon
+- `components/`: reusable pieces (`NavBar`, `BlobAvatar`, `BuddyCard`, `BrowseBuddies` with the course filter, `ProfileForm`, `Doodle`)
+- `data.ts`: the fake study buddies and the list of courses (swapped for a real database on 3 Dec)
 - `SPEC.md`: what the app should do
 - `AGENTS.md`: Next.js notes for coding agents (written by `next dev`)
 
-A new page goes in its own folder with a `page.tsx`, for example `app/browse/page.tsx` becomes `/browse`.
+A new page goes in its own folder with a `page.tsx`, for example `app/about/page.tsx` becomes `/about`.
 
 ## Design
 

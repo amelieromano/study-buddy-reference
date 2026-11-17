@@ -29,6 +29,12 @@ body {
   font-family: var(--font-dm-sans), sans-serif;
 }
 
+/* A clear focus ring for keyboard users, the same on every link, button and input. */
+:focus-visible {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 3px;
+}
+
 /* A card that looks like a sticker: thick ink outline, rounded corners, hard shadow. */
 @utility sticker-card {
   background-color: var(--paper);

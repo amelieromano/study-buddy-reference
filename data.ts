@@ -29,7 +29,7 @@ export const buddies: Buddy[] = [
     course: "Economics",
     module: "Econometrics",
     freeHours: "Mon and Wed, 2–4pm",
-    blob: { shape: "flower", color: "tomato", eyes: "wide" },
+    blob: { shape: "round", color: "tomato", eyes: "dots" },
   },
   {
     id: 2,
