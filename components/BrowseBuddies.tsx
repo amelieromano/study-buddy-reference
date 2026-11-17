@@ -22,7 +22,7 @@ export default function BrowseBuddies({ buddies, courses }: { buddies: Buddy[]; 
             key={course}
             onClick={() => setSelected(course)}
             aria-pressed={selected === course}
-            className={`rounded-full border-[3px] border-ink px-4 py-1.5 font-display font-semibold ${
+            className={`rounded-full border-[3px] border-ink px-3 py-1 text-sm sm:px-4 sm:py-1.5 sm:text-base font-display font-semibold ${
               selected === course ? "bg-cobalt text-white" : "bg-paper hover:bg-cream"
             }`}
           >
@@ -32,7 +32,7 @@ export default function BrowseBuddies({ buddies, courses }: { buddies: Buddy[]; 
       </div>
 
       {shown.length > 0 ? (
-        <div className="mt-8 grid grid-cols-3 gap-6">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {shown.map((buddy) => (
             <BuddyCard key={buddy.id} buddy={buddy} />
           ))}
