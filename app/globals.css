@@ -1,26 +1,63 @@
+/* Global styles: the brand colours, fonts and sticker styles from the Design section in CLAUDE.md. */
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f7ece6;
+  --paper: #fffcf3;
+  --ink: #181818;
+  --tomato: #ea602a;
+  --cobalt: #185ad8;
+  --bubblegum: #d860a2;
+  --forest: #1e4836;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-tomato: var(--tomato);
+  --color-cobalt: var(--cobalt);
+  --color-bubblegum: var(--bubblegum);
+  --color-forest: var(--forest);
+  --font-display: var(--font-fredoka);
+  --font-body: var(--font-dm-sans);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+/* A card that looks like a sticker: thick ink outline, rounded corners, hard shadow. */
+@utility sticker-card {
+  background-color: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 1.5rem;
+  box-shadow: 4px 4px 0 0 var(--ink);
+}
+
+/* The one button style used everywhere. Add a bg- colour class to it. */
+@utility sticker-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 3px solid var(--ink);
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-fredoka), sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--ink);
+  box-shadow: 4px 4px 0 0 var(--ink);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 var(--ink);
+  }
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 var(--ink);
+  }
 }
